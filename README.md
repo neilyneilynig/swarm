@@ -41,13 +41,46 @@ EXO lets you pool computing resources across multiple machines to run large lang
 
 ```bash
 # Install
-pip install exo-inference
+pip install -e .
 
 # Start a node
-exo node start
+exo node
+
+# Discover peers (in another terminal)
+exo discover
 
 # Run inference
 exo infer "Tell me about quantum computing"
+```
+
+## 📺 Demo
+
+Check out the [interactive demos](demos/) to see EXO in action:
+
+```bash
+# Quick start tutorial
+python demos/quickstart.py
+
+# Multi-node simulation
+python demos/multinode_demo.py
+
+# Terminal examples
+bash demos/terminal_examples.sh
+```
+
+### Example Output
+
+```
+$ exo discover --timeout 5
+
+┏━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
+┃ Node ID  ┃ IP Address  ┃ Device      ┃ Memory(GB) ┃
+┡━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━━━━━┩
+│ a1b2c3d4 │ 192.168.1.5 │ mac_m_series│       16.0 │
+│ e5f6g7h8 │ 192.168.1.8 │ raspberry_pi│        4.0 │
+└──────────┴─────────────┴─────────────┴────────────┘
+
+Total: 2 nodes, 20.0GB memory
 ```
 
 ## 📋 Requirements
