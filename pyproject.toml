@@ -52,8 +52,8 @@ mac = [
 exo = "exo.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/neilyneilynig/exo"
-Repository = "https://github.com/neilyneilynig/exo"
+Homepage = "https://github.com/neilyneilynig/swarm"
+Repository = "https://github.com/neilyneilynig/swarm"
 
 [tool.setuptools.packages.find]
 where = ["."]

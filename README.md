@@ -2,6 +2,10 @@
 
 **Run LLMs across multiple consumer devices. Turn your homelab into an AI supercomputer.**
 
+![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-alpha-orange.svg)
+
 Inspired by the original exo project, rebuilt from scratch with performance and simplicity in mind.
 
 ## 🎯 What is Swarm?
