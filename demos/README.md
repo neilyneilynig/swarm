@@ -1,4 +1,4 @@
-# EXO Demos
+# Swarm Demos
 
 Interactive demonstrations of EXO's distributed AI inference capabilities.
 
@@ -61,7 +61,7 @@ Perfect for screenshots and learning the commands.
 All demos require:
 - Python 3.9+
 - Rich library (`pip install rich`)
-- EXO installed (`pip install -e ..`)
+- Swarm installed (`pip install -e ..`)
 
 ## Tips
 
@@ -77,20 +77,20 @@ To test across real machines:
 **Machine 1:**
 ```bash
 cd ..
-exo node --port 5000
+swarm node --port 5000
 ```
 
 **Machine 2:**
 ```bash
 cd ..
-exo node --port 5000
+swarm node --port 5000
 ```
 
 **Machine 3 (client):**
 ```bash
 cd ..
-exo discover
-exo infer "Your prompt here"
+swarm discover
+swarm infer "Your prompt here"
 ```
 
 See [../DEMO.md](../DEMO.md) for complete documentation.

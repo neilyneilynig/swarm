@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-EXO Quick Start Demo
+Swarm Quick Start Demo
 
 Demonstrates the core features of EXO:
 1. Start a node
@@ -26,9 +26,9 @@ async def demo():
     
     # Header
     console.print(Panel.fit(
-        "[bold green]⚡ EXO Quick Start Demo[/bold green]\n\n"
+        "[bold green]⚡ Swarm Quick Start Demo[/bold green]\n\n"
         "This demo shows how to:\n"
-        "  1. Start an EXO compute node\n"
+        "  1. Start an Swarm compute node\n"
         "  2. Discover peers on the network\n"
         "  3. Run distributed inference",
         title="Welcome to EXO",
@@ -39,9 +39,9 @@ async def demo():
     input()
     
     # Step 1: Import and create node
-    console.print("\n[bold]Step 1: Create an EXO Node[/bold]\n")
+    console.print("\n[bold]Step 1: Create an Swarm Node[/bold]\n")
     
-    code1 = """from exo.node import Node, NodeConfig
+    code1 = """from swarm.node import Node, NodeConfig
 
 # Create node configuration
 config = NodeConfig(
@@ -59,7 +59,7 @@ print(f"Memory: {node.stats.memory_available_gb:.1f}GB")"""
     
     # Actually run it
     console.print("\n[dim]Running...[/dim]\n")
-    from exo.node import Node, NodeConfig
+    from swarm.node import Node, NodeConfig
     
     config = NodeConfig(port=5000, auto_discover=False)  # No discovery for demo
     node = Node(config)
@@ -157,7 +157,7 @@ await node.stop()"""
     console.print(Panel.fit(
         "[bold green]Demo Complete! 🎉[/bold green]\n\n"
         "You've learned how to:\n"
-        "  [green]✓[/green] Create and configure an EXO node\n"
+        "  [green]✓[/green] Create and configure an Swarm node\n"
         "  [green]✓[/green] Start the discovery service\n"
         "  [green]✓[/green] Check cluster status\n"
         "  [green]✓[/green] Run distributed inference\n\n"

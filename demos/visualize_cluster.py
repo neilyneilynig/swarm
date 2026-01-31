@@ -2,7 +2,7 @@
 """
 Cluster Visualization Tool
 
-Creates ASCII art visualization of the EXO cluster topology,
+Creates ASCII art visualization of the Swarm cluster topology,
 showing nodes, connections, and layer distribution.
 """
 
@@ -18,7 +18,7 @@ from rich.table import Table
 from rich.panel import Panel
 from rich import box
 
-from exo.node import Node, NodeConfig
+from swarm.node import Node, NodeConfig
 
 console = Console()
 
@@ -30,7 +30,7 @@ def create_cluster_diagram(nodes_info):
     
     # Header
     diagram.append("┌" + "─" * 58 + "┐")
-    diagram.append("│" + " " * 18 + "EXO CLUSTER TOPOLOGY" + " " * 20 + "│")
+    diagram.append("│" + " " * 18 + "Swarm CLUSTER TOPOLOGY" + " " * 20 + "│")
     diagram.append("└" + "─" * 58 + "┘")
     diagram.append("")
     
@@ -109,7 +109,7 @@ async def main():
     """Run the cluster visualization."""
     
     console.print(Panel.fit(
-        "[bold cyan]⚡ EXO Cluster Visualization[/bold cyan]\n\n"
+        "[bold cyan]⚡ Swarm Cluster Visualization[/bold cyan]\n\n"
         "Visual representation of your distributed cluster",
         border_style="cyan"
     ))

@@ -1,4 +1,4 @@
-# EXO Usage Guide
+# Swarm Usage Guide
 
 ## Installation
 
@@ -21,7 +21,7 @@ pip install -e ".[mac]"
 On each machine in your cluster:
 
 ```bash
-exo node
+swarm node
 ```
 
 This will:
@@ -35,7 +35,7 @@ This will:
 Check what nodes are available:
 
 ```bash
-exo discover --timeout 10
+swarm discover --timeout 10
 ```
 
 Output:
@@ -51,10 +51,10 @@ Output:
 ### 3. Run Inference
 
 ```bash
-exo infer "Explain quantum computing in simple terms"
+swarm infer "Explain quantum computing in simple terms"
 ```
 
-EXO will:
+Swarm will:
 1. Discover available nodes
 2. Partition the model across nodes based on memory
 3. Run distributed inference
@@ -66,19 +66,19 @@ EXO will:
 
 ```bash
 # Specify port
-exo node --port 6000
+swarm node --port 6000
 
 # Specify device type
-exo node --device-type mac_m_series
+swarm node --device-type mac_m_series
 
 # Disable auto-discovery
-exo node --no-discover
+swarm node --no-discover
 ```
 
 ### Specify Model
 
 ```bash
-exo infer "Hello" --model llama-7b
+swarm infer "Hello" --model llama-7b
 ```
 
 Available models:
@@ -93,15 +93,15 @@ Available models:
 
 **Machine 1 (MacBook M1, 16GB)**
 ```bash
-exo node --port 5000
+swarm node --port 5000
 ```
 
 **Machine 2 (Mac Mini M2, 8GB)**
 ```bash
-exo node --port 5000
+swarm node --port 5000
 ```
 
-EXO automatically discovers both nodes and distributes layers:
+Swarm automatically discovers both nodes and distributes layers:
 - MacBook M1: Layers 1-20 (66% of model)
 - Mac Mini M2: Layers 21-32 (34% of model)
 
@@ -111,7 +111,7 @@ EXO automatically discovers both nodes and distributes layers:
 **Machine 2 (Linux, 8GB)** → Secondary compute  
 **Machine 3 (RPi 5, 4GB)** → Coordination & light layers
 
-EXO distributes intelligently:
+Swarm distributes intelligently:
 - Mac: Layers 1-18
 - Linux: Layers 19-28
 - RPi: Layers 29-32 + coordination
@@ -122,16 +122,16 @@ EXO distributes intelligently:
 
 1. Check firewall settings - port 5000 and mDNS must be open
 2. Ensure all devices are on the same network
-3. Try manual discovery: `exo discover --timeout 15`
+3. Try manual discovery: `swarm discover --timeout 15`
 
 ### Memory issues
 
 ```bash
 # Check node memory
-exo node --help
+swarm node --help
 
 # Use smaller model
-exo infer "test" --model default
+swarm infer "test" --model default
 ```
 
 ### Network latency
@@ -162,7 +162,7 @@ exo infer "test" --model default
 ## Performance Tips
 
 1. **Use wired connections** - WiFi adds latency
-2. **Match layer boundaries** - Let EXO auto-partition
+2. **Match layer boundaries** - Let Swarm auto-partition
 3. **Add more memory** - More nodes = bigger models
 4. **GPU support** - Coming soon for Metal/CUDA acceleration
 
@@ -170,7 +170,7 @@ exo infer "test" --model default
 
 ```python
 import asyncio
-from exo.node import Node, NodeConfig
+from swarm.node import Node, NodeConfig
 
 async def main():
     # Create node

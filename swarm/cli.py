@@ -1,5 +1,5 @@
 """
-EXO CLI - Command-line interface for distributed AI inference.
+Swarm CLI - Command-line interface for distributed AI inference.
 """
 
 import asyncio
@@ -10,7 +10,7 @@ from rich.table import Table
 from rich.panel import Panel
 from rich.logging import RichHandler
 
-from exo.node.node import Node, NodeConfig
+from swarm.node.node import Node, NodeConfig
 
 console = Console()
 
@@ -28,7 +28,7 @@ logger = logging.getLogger("exo")
 @click.version_option(version="0.1.0")
 def main():
     """
-    ⚡ EXO - Distributed AI Inference
+    ⚡ Swarm - Distributed AI Inference
     
     Run large language models across multiple devices.
     """
@@ -40,7 +40,7 @@ def main():
 @click.option("--device-type", help="Device type (auto-detected if not specified)")
 @click.option("--no-discover", is_flag=True, help="Disable auto-discovery")
 def node(port: int, device_type: str, no_discover: bool):
-    """Start an EXO compute node."""
+    """Start an Swarm compute node."""
     
     config = NodeConfig(
         port=port,
@@ -52,14 +52,14 @@ def node(port: int, device_type: str, no_discover: bool):
     
     # Display startup info
     console.print(Panel.fit(
-        f"[bold green]⚡ EXO Node Starting[/bold green]\n\n"
+        f"[bold green]⚡ Swarm Node Starting[/bold green]\n\n"
         f"Node ID: [cyan]{node_instance.node_id}[/cyan]\n"
         f"Device: [yellow]{node_instance.stats.device_type}[/yellow]\n"
         f"Memory: [magenta]{node_instance.stats.memory_available_gb:.1f}GB[/magenta] / "
         f"{node_instance.stats.memory_total_gb:.1f}GB\n"
         f"Port: [blue]{port}[/blue]\n"
         f"Auto-discovery: [green]{'ON' if not no_discover else 'OFF'}[/green]",
-        title="EXO Node",
+        title="Swarm Node",
     ))
     
     async def run():
@@ -132,7 +132,7 @@ def infer(prompt: str, model: str, node_id: str):
 @main.command()
 @click.option("--timeout", default=5, help="Discovery timeout in seconds")
 def discover(timeout: int):
-    """Discover available EXO nodes on the network."""
+    """Discover available Swarm nodes on the network."""
     
     console.print(f"[cyan]Discovering nodes for {timeout} seconds...[/cyan]\n")
     
@@ -182,16 +182,16 @@ def discover(timeout: int):
 
 @main.command()
 def status():
-    """Show EXO system status."""
+    """Show Swarm system status."""
     
     console.print(Panel.fit(
-        "[bold green]⚡ EXO - Distributed AI Inference[/bold green]\n\n"
+        "[bold green]⚡ Swarm - Distributed AI Inference[/bold green]\n\n"
         "Version: 0.1.0\n"
         "Status: Operational\n\n"
         "[dim]Use 'exo discover' to find nodes\n"
         "Use 'exo node' to start a compute node\n"
         "Use 'exo infer <prompt>' to run inference[/dim]",
-        title="EXO Status",
+        title="Swarm Status",
     ))
 
 

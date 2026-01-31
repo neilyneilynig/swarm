@@ -1,5 +1,5 @@
 """Discovery module."""
 
-from exo.discovery.service import DiscoveryService, PeerInfo
+from swarm.discovery.service import DiscoveryService, PeerInfo
 
 __all__ = ["DiscoveryService", "PeerInfo"]

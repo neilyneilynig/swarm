@@ -1,5 +1,5 @@
 """
-EXO compute node.
+Swarm compute node.
 
 Represents a single machine in the distributed inference cluster.
 """
@@ -12,8 +12,8 @@ import logging
 from typing import Optional, Dict, List
 from dataclasses import dataclass, field
 
-from exo.discovery.service import DiscoveryService, PeerInfo
-from exo.inference.coordinator import InferenceCoordinator
+from swarm.discovery.service import DiscoveryService, PeerInfo
+from swarm.inference.coordinator import InferenceCoordinator
 
 logger = logging.getLogger(__name__)
 
@@ -43,7 +43,7 @@ class NodeStats:
 
 class Node:
     """
-    EXO compute node.
+    Swarm compute node.
     
     Handles:
     - Peer discovery

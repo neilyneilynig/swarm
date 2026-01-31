@@ -1,7 +1,7 @@
 """
 Peer discovery service using mDNS/Zeroconf.
 
-Automatically discovers other EXO nodes on the local network.
+Automatically discovers other Swarm nodes on the local network.
 """
 
 import asyncio
@@ -30,12 +30,12 @@ class PeerInfo:
 
 class DiscoveryService:
     """
-    Discovers and announces EXO nodes on the local network.
+    Discovers and announces Swarm nodes on the local network.
     
     Uses mDNS (Zeroconf) for zero-config peer discovery.
     """
     
-    SERVICE_TYPE = "_exo._tcp.local."
+    SERVICE_TYPE = "_swarm._tcp.local."
     
     def __init__(
         self,

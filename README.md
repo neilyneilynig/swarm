@@ -1,12 +1,12 @@
-# ⚡ EXO - Distributed AI Inference
+# ⚡ Swarm - Distributed AI Inference
 
 **Run LLMs across multiple consumer devices. Turn your homelab into an AI supercomputer.**
 
 Inspired by the original exo project, rebuilt from scratch with performance and simplicity in mind.
 
-## 🎯 What is EXO?
+## 🎯 What is Swarm?
 
-EXO lets you pool computing resources across multiple machines to run large language models:
+Swarm lets you pool computing resources across multiple machines to run large language models:
 - Split models across Mac, Linux, Raspberry Pi, etc.
 - Automatic peer discovery on your local network
 - Dynamic load balancing
@@ -44,18 +44,18 @@ EXO lets you pool computing resources across multiple machines to run large lang
 pip install -e .
 
 # Start a node
-exo node
+swarm node
 
 # Discover peers (in another terminal)
-exo discover
+swarm discover
 
 # Run inference
-exo infer "Tell me about quantum computing"
+swarm infer "Tell me about quantum computing"
 ```
 
 ## 📺 Demo
 
-Check out the [interactive demos](demos/) to see EXO in action:
+Check out the [interactive demos](demos/) to see Swarm in action:
 
 ```bash
 # Quick start tutorial
@@ -71,7 +71,7 @@ bash demos/terminal_examples.sh
 ### Example Output
 
 ```
-$ exo discover --timeout 5
+$ swarm discover --timeout 5
 
 ┏━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
 ┃ Node ID  ┃ IP Address  ┃ Device      ┃ Memory(GB) ┃

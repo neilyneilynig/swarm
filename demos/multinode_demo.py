@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Multi-Node EXO Demo
+Multi-Node Swarm Demo
 
 Simulates multiple nodes running on the same machine
 to demonstrate cluster formation and distributed inference.
@@ -21,7 +21,7 @@ from rich.panel import Panel
 from rich.live import Live
 from rich.layout import Layout
 
-from exo.node import Node, NodeConfig
+from swarm.node import Node, NodeConfig
 
 console = Console()
 logging.basicConfig(level=logging.WARNING)  # Suppress info logs for cleaner demo
@@ -43,7 +43,7 @@ async def main():
     """Run the multi-node demo."""
     
     console.print(Panel.fit(
-        "[bold green]⚡ EXO Multi-Node Demo[/bold green]\n\n"
+        "[bold green]⚡ Swarm Multi-Node Demo[/bold green]\n\n"
         "Simulating a 3-node cluster:\n"
         "  • Node 1: Mac M1 (16GB)\n"
         "  • Node 2: Mac Mini (8GB)\n"

@@ -6,7 +6,7 @@ Run with: python test_basic.py
 
 import asyncio
 import logging
-from exo.node import Node, NodeConfig
+from swarm.node import Node, NodeConfig
 
 logging.basicConfig(level=logging.INFO)
 
@@ -64,7 +64,7 @@ async def test_cluster_info():
 async def main():
     """Run all tests."""
     print("=" * 60)
-    print("EXO Basic Tests")
+    print("Swarm Basic Tests")
     print("=" * 60 + "\n")
     
     try:

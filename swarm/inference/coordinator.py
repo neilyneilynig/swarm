@@ -10,7 +10,7 @@ import logging
 from typing import List, Optional, Dict
 from dataclasses import dataclass
 
-from exo.discovery.service import PeerInfo
+from swarm.discovery.service import PeerInfo
 
 logger = logging.getLogger(__name__)
 

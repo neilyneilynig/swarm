@@ -1,11 +1,11 @@
 #!/bin/bash
 # Terminal Examples for Documentation Screenshots
-# These commands demonstrate EXO features for documentation
+# These commands demonstrate Swarm features for documentation
 
 set -e
 
 echo "======================================"
-echo "EXO Terminal Examples"
+echo "Swarm Terminal Examples"
 echo "======================================"
 echo ""
 
@@ -13,11 +13,11 @@ echo ""
 echo "Example 1: Starting a Node"
 echo "----------------------------"
 echo ""
-echo "$ exo node"
+echo "$ swarm node"
 echo ""
 cat << 'EOF'
 ┌─────────────────────────────────────────────┐
-│            ⚡ EXO Node Starting            │
+│            ⚡ Swarm Node Starting            │
 │                                             │
 │ Node ID: a1b2c3d4                          │
 │ Device: mac_m_series                       │
@@ -36,7 +36,7 @@ echo ""
 echo "Example 2: Discovering Peers"
 echo "-----------------------------"
 echo ""
-echo "$ exo discover --timeout 5"
+echo "$ swarm discover --timeout 5"
 echo ""
 cat << 'EOF'
 Discovering nodes for 5 seconds...
@@ -58,7 +58,7 @@ echo ""
 echo "Example 3: Running Inference"
 echo "----------------------------"
 echo ""
-echo "$ exo infer \"What is quantum entanglement?\""
+echo "$ swarm infer \"What is quantum entanglement?\""
 echo ""
 cat << 'EOF'
 Prompt: What is quantum entanglement?
@@ -125,7 +125,7 @@ echo "---------------------------"
 echo ""
 cat << 'EOF'
 import asyncio
-from exo.node import Node, NodeConfig
+from swarm.node import Node, NodeConfig
 
 async def main():
     # Create and start node

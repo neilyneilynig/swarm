@@ -1,6 +1,6 @@
-# 📺 EXO Demo Guide
+# 📺 Swarm Demo Guide
 
-Visual guide and examples for EXO distributed AI inference.
+Visual guide and examples for Swarm distributed AI inference.
 
 ## Interactive Demos
 
@@ -8,7 +8,7 @@ We've included several interactive demos to help you understand EXO:
 
 ### 1. Quick Start Tutorial (`quickstart.py`)
 
-**Interactive walkthrough** of EXO basics with code examples and live execution.
+**Interactive walkthrough** of Swarm basics with code examples and live execution.
 
 ```bash
 python demos/quickstart.py
@@ -35,7 +35,7 @@ python demos/multinode_demo.py
 **Example output:**
 
 ```
-⚡ EXO Multi-Node Demo
+⚡ Swarm Multi-Node Demo
 
 Simulating a 3-node cluster:
   • Node 1: Mac M1 (16GB)
@@ -105,12 +105,12 @@ bash demos/terminal_examples.sh
 
 **On MacBook:**
 ```bash
-exo node
+swarm node
 ```
 
 **On Mac Mini:**
 ```bash
-exo node
+swarm node
 ```
 
 **Result:**
@@ -166,7 +166,7 @@ RPi 4:       Layers 61-70 (9%)
 
 ```
               ┌─────────────────────────────────┐
-              │   EXO Discovery Service (mDNS)  │
+              │   Swarm Discovery Service (mDNS)  │
               │  Auto-announces & finds peers   │
               └────────────┬────────────────────┘
                            │
@@ -197,9 +197,9 @@ RPi 4:       Layers 61-70 (9%)
 
 ## Performance Comparison
 
-### Single Machine vs EXO Cluster
+### Single Machine vs Swarm Cluster
 
-| Metric | Single Mac 16GB | EXO Cluster (3 nodes, 28GB) |
+| Metric | Single Mac 16GB | Swarm Cluster (3 nodes, 28GB) |
 |--------|-----------------|----------------------------|
 | Max model size | llama-7b | llama-13b or llama-70b (4-bit) |
 | Inference speed | Baseline | ~1.5-2x faster (parallel layers) |
@@ -225,46 +225,46 @@ RPi 4:       Layers 61-70 (9%)
 
 ```bash
 # Start node with defaults
-exo node
+swarm node
 
 # Custom port
-exo node --port 6000
+swarm node --port 6000
 
 # Specify device type
-exo node --device-type mac_m_series
+swarm node --device-type mac_m_series
 
 # Disable auto-discovery
-exo node --no-discover
+swarm node --no-discover
 ```
 
 ### Discovery
 
 ```bash
 # Quick scan (5 seconds)
-exo discover
+swarm discover
 
 # Longer scan
-exo discover --timeout 15
+swarm discover --timeout 15
 ```
 
 ### Inference
 
 ```bash
 # Simple prompt
-exo infer "What is AI?"
+swarm infer "What is AI?"
 
 # Specify model
-exo infer "Explain" --model llama-7b
+swarm infer "Explain" --model llama-7b
 
 # Connect to specific node
-exo infer "Test" --node-id a1b2c3d4
+swarm infer "Test" --node-id a1b2c3d4
 ```
 
 ### Status
 
 ```bash
 # System status
-exo status
+swarm status
 ```
 
 ---
@@ -275,7 +275,7 @@ exo status
 
 ```python
 import asyncio
-from exo.node import Node, NodeConfig
+from swarm.node import Node, NodeConfig
 
 async def main():
     # Create node
@@ -306,7 +306,7 @@ asyncio.run(main())
 ### Advanced: Custom Callbacks
 
 ```python
-from exo.discovery import DiscoveryService, PeerInfo
+from swarm.discovery import DiscoveryService, PeerInfo
 
 def on_peer_added(peer: PeerInfo):
     print(f"New peer: {peer.node_id} ({peer.device_type}, {peer.memory_gb}GB)")
