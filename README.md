@@ -1,0 +1,69 @@
+# ⚡ EXO - Distributed AI Inference
+
+**Run LLMs across multiple consumer devices. Turn your homelab into an AI supercomputer.**
+
+Inspired by the original exo project, rebuilt from scratch with performance and simplicity in mind.
+
+## 🎯 What is EXO?
+
+EXO lets you pool computing resources across multiple machines to run large language models:
+- Split models across Mac, Linux, Raspberry Pi, etc.
+- Automatic peer discovery on your local network
+- Dynamic load balancing
+- Model layer partitioning
+
+**Example:**
+- MacBook M1 (16GB) → Runs layers 1-20
+- Mac Mini M2 (8GB) → Runs layers 21-35
+- Raspberry Pi 5 → Coordination & routing
+
+## ✨ Features
+
+- 🔍 **Auto-discovery** - Zero-config peer detection via mDNS
+- 🧩 **Model partitioning** - Intelligent layer distribution
+- ⚡ **Fast inference** - Optimized tensor transfer
+- 🌐 **Multi-device** - Mac, Linux, RPi support
+- 🔧 **CLI control** - Simple management interface
+
+## 🏗️ Architecture
+
+```
+┌─────────────┐     ┌─────────────┐     ┌─────────────┐
+│   Node A    │────▶│   Node B    │────▶│   Node C    │
+│ Layers 1-10 │     │ Layers 11-20│     │ Layers 21-32│
+└─────────────┘     └─────────────┘     └─────────────┘
+       │                   │                   │
+       └───────────────────┴───────────────────┘
+                  Discovery Service
+```
+
+## 🚀 Quick Start
+
+```bash
+# Install
+pip install exo-inference
+
+# Start a node
+exo node start
+
+# Run inference
+exo infer "Tell me about quantum computing"
+```
+
+## 📋 Requirements
+
+- Python 3.9+
+- 4GB+ RAM per node
+- Local network connectivity
+
+## 🛠️ Built With
+
+- Python
+- PyTorch
+- gRPC (inter-node communication)
+- mDNS (discovery)
+- MLX (Mac acceleration)
+
+---
+
+**Status:** 🚧 Building from scratch
