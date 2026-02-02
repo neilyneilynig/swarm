@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "swarm-llm"
+name = "swarm"
 version = "0.1.0"
 description = "Distributed AI inference across multiple devices"
 readme = "README.md"
@@ -49,7 +49,7 @@ mac = [
 ]
 
 [project.scripts]
-exo = "exo.cli:main"
+swarm = "swarm.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/neilyneilynig/swarm"
@@ -57,7 +57,7 @@ Repository = "https://github.com/neilyneilynig/swarm"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["exo*"]
+include = ["swarm*"]
 
 [tool.black]
 line-length = 100
